@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ActFirst</string>
+    <string name="helpText1main">HELP text for main window add explanation for all game</string>
+    <string name="helpText2main">Choose scene 1 to 4 to start game\nWhen you start the scene the 4 minute timer will start\nEach scene will present an accident where YOU are the person that can help</string>
+    <string name="Scene1Name">RESUSCITATION</string>
+    <string name="UserName">User name</string>
+    <string name="Scene2Name">BROKEN BONE</string>
+    <string name="Scene3Name">HYPOTHERMIA</string>
+</resources>

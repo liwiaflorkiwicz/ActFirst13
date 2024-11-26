@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/scene1Button"
+        android:title="Scene 1"
+        android:icon="@drawable/positioning"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/scene2Button"
+        android:title="Scene 2"
+        android:icon="@drawable/rko"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/scene3Button"
+        android:title="Scene 3"
+        android:icon="@drawable/wounds"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/scene4Button"
+        android:title="Scene 4"
+        android:icon="@drawable/askforhelp"
+        app:showAsAction="never" />
+</menu>
