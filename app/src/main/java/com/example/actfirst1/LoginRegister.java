@@ -28,9 +28,10 @@ public class LoginRegister extends AppCompatActivity {
 
         preferences = getSharedPreferences("user_preferences", MODE_PRIVATE);
 
-        if (preferences.getBoolean("is_logged_in", false)) {
+        // if uncommented not need for login
+        /*if (preferences.getBoolean("is_logged_in", false)) {
             goToMain(preferences.getString("username","Guest"));
-        }
+        }*/
 
         btnLogin.setOnClickListener(v -> {
             String username = usernameField.getText().toString();
@@ -44,8 +45,11 @@ public class LoginRegister extends AppCompatActivity {
                 preferences.edit().putBoolean("is_logged_in", true).apply();
                 goToMain(username);
             }
+            else if (storedUsername.equals(username) && !storedPassword.equals(password)) {
+                Toast.makeText(this, "Invalid password", Toast.LENGTH_SHORT).show();
+            }
             else {
-                Toast.makeText(this, "Invalid login or password", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "No such user, user not registered", Toast.LENGTH_SHORT).show();
             }
         });
 

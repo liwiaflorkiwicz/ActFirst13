@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/baseline_remove_red_eye_24" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/ActionButton"
+        android:id="@+id/ActionButtonBlood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0.6"
@@ -63,7 +63,7 @@
         app:srcCompat="@drawable/baseline_local_fire_department_24" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/actionButtonCheckBreath"
+        android:id="@+id/ActionButtonCheckBreath"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0.6"
@@ -157,7 +157,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.498"
-        app:srcCompat="@drawable/hypo" />
+        app:srcCompat="@drawable/cold" />
 
     <Button
         android:id="@+id/helpButtonScene3"

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,10 @@ public class Scene1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scene1); // load layout scene1.xml
+
+        String username = getIntent().getStringExtra("username");
+        TextView textView = findViewById(R.id.textView8);
+        textView.setText(username);
 
         FloatingActionButton ActionButtonSafety = findViewById(R.id.ActionButtonSafety);
         FloatingActionButton ActionButtonCheckCons = findViewById(R.id.ActionButtonCheckCons);
@@ -62,6 +67,7 @@ public class Scene1Activity extends AppCompatActivity {
         Button backButtonScene1 = findViewById(R.id.backButtonScene1);
         backButtonScene1.setOnClickListener(view -> {
             Intent intent = new Intent(Scene1Activity.this, MainActivity.class);
+            intent.putExtra("username", username);
             startActivity(intent);
         });
 

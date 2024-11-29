@@ -56,6 +56,7 @@
         android:clickable="true"
         android:contentDescription="Ask for help"
         app:backgroundTint="#FF4081"
+        app:layout_constraintBottom_toBottomOf="@+id/ActionButtonCompression"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_popup_reminder" />
@@ -99,8 +100,8 @@
         app:backgroundTint="#FF4081"
         app:layout_constraintEnd_toStartOf="@+id/ActionButtonCall999"
         app:layout_constraintStart_toEndOf="@+id/ActionButtonHelp"
-        app:srcCompat="@drawable/baseline_keyboard_double_arrow_down_24"
-        tools:layout_editor_absoluteY="124dp" />
+        app:layout_constraintTop_toTopOf="@+id/ActionButtonCall999"
+        app:srcCompat="@drawable/baseline_keyboard_double_arrow_down_24" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/ActionButtonSafety"
@@ -153,7 +154,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.498"
-        app:srcCompat="@drawable/rko" />
+        app:srcCompat="@drawable/cpr" />
 
     <Button
         android:id="@+id/helpButtonScene1"
@@ -192,6 +193,7 @@
         android:clickable="true"
         android:contentDescription="Call 999"
         app:backgroundTint="#FF4081"
+        app:layout_constraintBottom_toBottomOf="@+id/ActionButtonPerfBreath"
         app:layout_constraintEnd_toStartOf="@+id/ActionButtonPerfBreath"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/stat_sys_phone_call" />

@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#90CAF9"
     tools:context=".MainActivity">
 
         <Button
@@ -39,32 +40,35 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="44dp"
             android:layout_marginBottom="50dp"
+            android:backgroundTint="#90CAF9"
             android:contentDescription="Go to scene 1"
+            android:tint="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/historyButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/scene3Button"
             app:layout_constraintTop_toBottomOf="@+id/scene2Button"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/askforhelp" />
+            app:srcCompat="@drawable/cough_small" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="86dp"
             android:layout_marginTop="4dp"
-            android:text="Scene3"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/Scene3Name"
+            app:layout_constraintEnd_toEndOf="@+id/scene3Button"
+            app:layout_constraintStart_toStartOf="@+id/scene3Button"
             app:layout_constraintTop_toBottomOf="@+id/scene3Button" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="86dp"
             android:layout_marginTop="4dp"
-            android:text="Scene1"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/Scene1Name"
+            app:layout_constraintEnd_toEndOf="@+id/scene1Button"
+            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintStart_toStartOf="@+id/scene1Button"
             app:layout_constraintTop_toBottomOf="@+id/scene1Button" />
 
         <TextView
@@ -72,9 +76,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="86dp"
-            android:text="Scene2"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/Scene2Name"
+            app:layout_constraintEnd_toEndOf="@+id/scene2Button"
+            app:layout_constraintStart_toStartOf="@+id/scene2Button"
             app:layout_constraintTop_toBottomOf="@+id/scene2Button" />
 
         <TextView
@@ -103,11 +107,13 @@
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_marginEnd="44dp"
+            android:backgroundTint="#9FA8DA"
             android:contentDescription="Go to scene 2"
+            android:tint="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/scene1Button"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:srcCompat="@drawable/rko" />
+            app:srcCompat="@drawable/leg_small" />
 
         <ImageButton
             android:id="@+id/scene3Button"
@@ -115,13 +121,14 @@
             android:layout_height="150dp"
             android:layout_marginStart="44dp"
             android:layout_marginEnd="24dp"
+            android:backgroundTint="#90CAF9"
             android:contentDescription="Go to scene 3"
             app:layout_constraintBottom_toTopOf="@+id/historyButton"
             app:layout_constraintEnd_toStartOf="@+id/scene4Button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/scene4Button"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/wounds" />
+            app:srcCompat="@drawable/cold_small" />
 
         <ImageButton
             android:id="@+id/scene1Button"
@@ -129,13 +136,15 @@
             android:layout_height="150dp"
             android:layout_marginStart="44dp"
             android:layout_marginEnd="30dp"
+            android:backgroundTint="#9FA8DA"
             android:contentDescription="Go to scene 1"
+            android:tint="#F06292"
             app:layout_constraintBottom_toTopOf="@+id/scene3Button"
             app:layout_constraintEnd_toStartOf="@+id/scene2Button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
             app:layout_constraintVertical_bias="0.051"
-            app:srcCompat="@drawable/automated_external_defibrillator" />
+            app:srcCompat="@drawable/cpr_small" />
 
         <Button
             android:id="@+id/historyButton"

@@ -1,7 +1,10 @@
 package com.example.actfirst1;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Button;
 
@@ -14,6 +17,10 @@ public class Scene2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scene2);
+
+        String username = getIntent().getStringExtra("username");
+        TextView textView = findViewById(R.id.textView8);
+        textView.setText(username);
 
         FloatingActionButton ActionButtonComfort = findViewById(R.id.ActionButtonComfort);
         ActionButtonComfort.setOnClickListener(view -> {
@@ -53,8 +60,23 @@ public class Scene2Activity extends AppCompatActivity {
         Button backButtonScene2 = findViewById(R.id.backButtonScene2);
         backButtonScene2.setOnClickListener(view -> {
             Intent intent = new Intent(Scene2Activity.this, MainActivity.class);
+            intent.putExtra("username", username);
             startActivity(intent);
         });
 
+        Button helpButtonScene2 = findViewById(R.id.helpButtonScene2);
+        helpButtonScene2.setOnClickListener(view -> showHelpDialogScene3());
+
+    }
+
+    private void showHelpDialogScene3() {
+
+        Dialog helpDialog = new Dialog(this);
+        helpDialog.setContentView(R.layout.dialog_scene2_help);
+
+        ImageView closeButton = helpDialog.findViewById(R.id.closeButton);
+        closeButton.setOnClickListener(v -> helpDialog.dismiss());
+
+        helpDialog.show();
     }
 }

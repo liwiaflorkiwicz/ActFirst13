@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="12dp">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/actionButtonCall"
+        android:layout_width="97dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:alpha="0.9"
+        android:clickable="false"
+        android:contentDescription="Call 999"
+        app:backgroundTint="#FF4081"
+        app:layout_constraintEnd_toEndOf="@+id/actionButtonSafety"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/actionButtonSafety"
+        app:layout_constraintTop_toBottomOf="@+id/actionButtonSafety"
+        app:srcCompat="@android:drawable/stat_sys_phone_call" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/actionButtonImmobilize"
+        android:layout_width="97dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:alpha="0.9"
+        android:clickable="false"
+        android:contentDescription="Do compressions"
+        app:backgroundTint="#FF4081"
+        app:layout_constraintEnd_toEndOf="@+id/actionButtonHelp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/actionButtonHelp"
+        app:layout_constraintTop_toBottomOf="@+id/actionButtonHelp"
+        app:srcCompat="@drawable/baseline_local_movies_24" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/ActionButtonComfort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:alpha="0.9"
+        android:clickable="false"
+        android:contentDescription="Calmly reassure the patient"
+        app:backgroundTint="#FF4081"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/closeButton"
+        app:srcCompat="@drawable/baseline_personal_injury_24" />
+
+    <TextView
+        android:id="@+id/textForHelp3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="elevate the limb slightly"
+        app:layout_constraintBottom_toBottomOf="@+id/actionButtonHelp"
+        app:layout_constraintEnd_toStartOf="@+id/actionButtonHelp"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/actionButtonHelp"
+        app:layout_constraintVertical_bias="0.459" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/actionButtonBlood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:alpha="0.9"
+        android:clickable="false"
+        android:contentDescription="Check blood circulation"
+        app:backgroundTint="#FF4081"
+        app:layout_constraintEnd_toEndOf="@+id/ActionButtonComfort"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ActionButtonComfort"
+        app:layout_constraintTop_toBottomOf="@+id/ActionButtonComfort"
+        app:srcCompat="@drawable/baseline_water_drop_24" />
+
+    <TextView
+        android:id="@+id/textForHelp4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="immobilize the bone"
+        app:layout_constraintBottom_toBottomOf="@+id/actionButtonImmobilize"
+        app:layout_constraintEnd_toStartOf="@+id/actionButtonImmobilize"
+        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/actionButtonImmobilize"
+        app:layout_constraintVertical_bias="0.513" />
+
+    <TextView
+        android:id="@+id/textForHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="check safety around you"
+        app:layout_constraintBottom_toBottomOf="@+id/actionButtonSafety"
+        app:layout_constraintEnd_toStartOf="@+id/actionButtonSafety"
+        app:layout_constraintHorizontal_bias="0.861"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/actionButtonSafety"
+        app:layout_constraintVertical_bias="0.486" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/actionButtonCheckBreath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:alpha="0.9"
+        android:clickable="false"
+        android:contentDescription="Monitor person conditions until help arrive"
+        app:backgroundTint="#FF4081"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/actionButtonImmobilize"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/actionButtonImmobilize"
+        app:layout_constraintTop_toBottomOf="@+id/actionButtonImmobilize"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/baseline_monitor_heart_24" />
+
+    <TextView
+        android:id="@+id/textForHelp6"
+        android:layout_width="187dp"
+        android:layout_height="64dp"
+        android:gravity="center"
+        android:text="cover the wound with a sterile cloth or clean gauze to prevent infection"
+        app:layout_constraintBottom_toBottomOf="@+id/actionButtonBlood"
+        app:layout_constraintEnd_toStartOf="@+id/actionButtonBlood"
+        app:layout_constraintHorizontal_bias="0.845"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/actionButtonBlood"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textForHelp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="call 999"
+        app:layout_constraintBottom_toBottomOf="@+id/actionButtonCall"
+        app:layout_constraintEnd_toStartOf="@+id/actionButtonCall"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/actionButtonCall"
+        app:layout_constraintVertical_bias="0.567" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/actionButtonHelp"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:alpha="0.9"
+        android:clickable="false"
+        android:contentDescription="Elevate the limb slightly"
+        app:backgroundTint="#FF4081"
+        app:layout_constraintEnd_toEndOf="@+id/actionButtonCall"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/actionButtonCall"
+        app:layout_constraintTop_toBottomOf="@+id/actionButtonCall"
+        app:srcCompat="@drawable/baseline_vertical_align_top_24" />
+
+    <TextView
+        android:id="@+id/textForHelp5"
+        android:layout_width="182dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="monitor person conditions until help arrive"
+        app:layout_constraintBottom_toBottomOf="@+id/actionButtonCheckBreath"
+        app:layout_constraintEnd_toStartOf="@+id/actionButtonCheckBreath"
+        app:layout_constraintHorizontal_bias="0.895"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/actionButtonCheckBreath"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textForHelp2.7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="calmly reassure the patient"
+        app:layout_constraintBottom_toBottomOf="@+id/ActionButtonComfort"
+        app:layout_constraintEnd_toStartOf="@+id/ActionButtonComfort"
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ActionButtonComfort"
+        app:layout_constraintVertical_bias="0.567" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/actionButtonSafety"
+        android:layout_width="97dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:alpha="0.9"
+        android:clickable="false"
+        android:contentDescription="Check safety"
+        app:backgroundTint="#FF4081"
+        app:layout_constraintEnd_toEndOf="@+id/actionButtonBlood"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/actionButtonBlood"
+        app:layout_constraintTop_toBottomOf="@+id/actionButtonBlood"
+        app:srcCompat="@drawable/baseline_warning_24" />
+
+    <ImageView
+        android:id="@+id/closeButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="end"
+        android:contentDescription="CloseDialog"
+        android:src="@drawable/baseline_close_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

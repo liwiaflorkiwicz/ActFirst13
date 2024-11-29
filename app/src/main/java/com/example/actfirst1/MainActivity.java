@@ -38,12 +38,21 @@ public class MainActivity extends AppCompatActivity {
         ImageButton scene1Button = findViewById(R.id.scene1Button);
         scene1Button.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, Scene1Activity.class);
+            intent.putExtra("username", username);
             startActivity(intent);
         });
 
         ImageButton scene2Button = findViewById(R.id.scene2Button);
         scene2Button.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, Scene2Activity.class);
+            intent.putExtra("username", username);
+            startActivity(intent);
+        });
+
+        ImageButton scene3Button = findViewById(R.id.scene3Button);
+        scene3Button.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, Scene3Activity.class);
+            intent.putExtra("username", username);
             startActivity(intent);
         });
     }
@@ -56,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
         ImageView closeButton = helpDialog.findViewById(R.id.closeButton);
         closeButton.setOnClickListener(v -> helpDialog.dismiss());
 
-        TextView helpText2 = helpDialog.findViewById(R.id.helpText2);
-        helpText2.setText(R.string.helpText2main);
+        TextView mainHelp = helpDialog.findViewById(R.id.mainHelp);
+        mainHelp.setText(R.string.helpText2main);
 
         helpDialog.show();
     }
