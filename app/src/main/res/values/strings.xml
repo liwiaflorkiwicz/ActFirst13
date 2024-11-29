@@ -1,9 +1,38 @@
 <resources>
     <string name="app_name">ActFirst</string>
     <string name="helpText1main">HELP text for main window add explanation for all game</string>
-    <string name="helpText2main">Choose scene 1 to 4 to start game\nWhen you start the scene the 4 minute timer will start\nEach scene will present an accident where YOU are the person that can help</string>
+    <string name="helpText2main">Choose scene 1 to 4 to start game\n
+        When you start the scene the 4 minute timer will start\n
+        Each scene will present an accident where YOU are the person that can help</string>
     <string name="Scene1Name">RESUSCITATION</string>
     <string name="UserName">User name</string>
     <string name="Scene2Name">BROKEN BONE</string>
     <string name="Scene3Name">HYPOTHERMIA</string>
+    <string name="Scene4Name">CHOKING</string>
+    <string name="Action_PerformBreath">Perform breath</string>
+    <string name="Action_CheckBlood">Check blood circulation</string>
+    <string name="Action_AskHelp">Ask for help</string>
+    <string name="Action_CheckBreathing">Check breath</string>
+    <string name="Action_CheckConsciousness">Check consciousness</string>
+    <string name="Action_PerformCompressions">Perform compressions</string>
+    <string name="Action_CheckSafety">Check safety around you</string>
+    <string name="back_to_main_page">BACK TO MAIN PAGE</string>
+    <string name="help">HELP</string>
+    <string name="Action_Call999">Call 999</string>
+    <string name="close_dialog_window">Close dialog window</string>
+    <string name="Action_Comfort">Calmly reassure the patient</string>
+    <string name="Action_Wound">Cover the wound with a sterile cloth or clean gauze to prevent infection</string>
+    <string name="Action_Elevate">Elevate the limb slightly</string>
+    <string name="Action_Monitor">Monitor person conditions until help arrive</string>
+    <string name="Action_Immobilize">Immobilize the bone</string>
+    <string name="Action_CPR">Start CPR</string>
+    <string name="Action_Warm">Provide warm surrounding</string>
+    <string name="Action_BackBlows">Perform back blows</string>
+    <string name="Action_Heimlich">Perform heimlich maneuver</string>
+    <string name="Action_Cough">Encourage coughing</string>
+    <string name="Action_CheckAirways">Check the airways</string>
+    <string name="back_to_game">PLAY SCENE AGAIN</string>
+    <string name="history">HISTORY</string>
+    <string name="end_text">Your scene ended\nYour results:\nScore: 0, Time: 0</string>
+    <string name="end_text2">Your scored points at: 0\n You lost points at: 0</string>
 </resources>

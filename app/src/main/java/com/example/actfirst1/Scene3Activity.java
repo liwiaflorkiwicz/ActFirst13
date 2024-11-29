@@ -23,9 +23,7 @@ public class Scene3Activity extends AppCompatActivity{
         textView.setText(username);
 
         FloatingActionButton ActionButtonObserve = findViewById(R.id.ActionButtonObserve);
-        ActionButtonObserve.setOnClickListener(view -> {
-            Toast.makeText(Scene3Activity.this, "PERSON OBSERVED", Toast.LENGTH_LONG).show();
-        });
+        ActionButtonObserve.setOnClickListener(view -> Toast.makeText(Scene3Activity.this, "PERSON OBSERVED", Toast.LENGTH_LONG).show());
 
         FloatingActionButton ActionButtonBlood = findViewById(R.id.ActionButtonBlood);
         ActionButtonBlood.setOnClickListener(view -> {
@@ -76,7 +74,7 @@ public class Scene3Activity extends AppCompatActivity{
     private void showHelpDialogScene3() {
 
         Dialog helpDialog = new Dialog(this);
-        //helpDialog.setContentView(R.layout.dialog_scene3_help);
+        helpDialog.setContentView(R.layout.dialog_scene3_help);
 
         ImageView closeButton = helpDialog.findViewById(R.id.closeButton);
         closeButton.setOnClickListener(v -> helpDialog.dismiss());
@@ -85,13 +83,3 @@ public class Scene3Activity extends AppCompatActivity{
     }
 }
 
-/*
-
-THINGS TO DO
-
-help for scene 3 4
-scene 4
-historia wynikow
-wysuwany pasek z algorytmem z boku ???
-
-*/

@@ -35,6 +35,13 @@ public class MainActivity extends AppCompatActivity {
         Button helpButton = findViewById(R.id.helpButton);
         helpButton.setOnClickListener(view -> showHelpDialog());
 
+        Button historyButton = findViewById(R.id.historyButton);
+        historyButton.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+            intent.putExtra("username", username);
+            startActivity(intent);
+        });
+
         ImageButton scene1Button = findViewById(R.id.scene1Button);
         scene1Button.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, Scene1Activity.class);
@@ -55,6 +62,13 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("username", username);
             startActivity(intent);
         });
+
+        ImageButton scene4Button = findViewById(R.id.scene4Button);
+        scene4Button.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, Scene4Activity.class);
+            intent.putExtra("username", username);
+            startActivity(intent);
+        });
     }
 
     private void showHelpDialog() {
@@ -71,3 +85,12 @@ public class MainActivity extends AppCompatActivity {
         helpDialog.show();
     }
 }
+
+/*
+
+THINGS TO DO
+
+historia wynikow
+wysuwany pasek z algorytmem z boku ???
+
+*/
