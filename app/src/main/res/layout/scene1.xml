@@ -8,11 +8,25 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/ActionButtonPerfBreath"
+        android:id="@+id/ActionButtonAED"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="124dp"
         android:layout_marginEnd="36dp"
+        android:clickable="true"
+        android:contentDescription="@string/Action_AED"
+        app:backgroundTint="#FF4081"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/automated_external_defibrillator__symbol_" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/ActionButtonPerfBreath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="268dp"
+        android:alpha="0.6"
         android:clickable="true"
         android:contentDescription="@string/Action_PerformBreath"
         app:backgroundTint="#FF4081"
@@ -95,12 +109,17 @@
         android:id="@+id/ActionButtonCompression"
         android:layout_width="97dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="28dp"
         android:clickable="true"
         android:contentDescription="@string/Action_PerformCompressions"
         app:backgroundTint="#FF4081"
+        app:layout_constraintBottom_toBottomOf="@+id/ActionButtonCall999"
         app:layout_constraintEnd_toStartOf="@+id/ActionButtonCall999"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toEndOf="@+id/ActionButtonHelp"
         app:layout_constraintTop_toTopOf="@+id/ActionButtonCall999"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/baseline_keyboard_double_arrow_down_24" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -174,29 +193,37 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginEnd="200dp"
-        android:layout_marginBottom="16dp"
         android:indeterminateBehavior="cycle"
         android:indeterminateDuration="3000"
         android:progressTint="#2196F3"
-        app:layout_constraintBottom_toTopOf="@+id/helpButtonScene1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/ActionButtonCall999"
         android:layout_width="97dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
         android:layout_marginEnd="32dp"
         android:clickable="true"
         android:contentDescription="@string/Action_Call999"
         app:backgroundTint="#FF4081"
-        app:layout_constraintBottom_toBottomOf="@+id/ActionButtonPerfBreath"
-        app:layout_constraintEnd_toStartOf="@+id/ActionButtonPerfBreath"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/ActionButtonAED"
+        app:layout_constraintEnd_toStartOf="@+id/ActionButtonAED"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:drawable/stat_sys_phone_call" />
+
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="@string/score"
+        app:layout_constraintBottom_toTopOf="@+id/helpButtonScene1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

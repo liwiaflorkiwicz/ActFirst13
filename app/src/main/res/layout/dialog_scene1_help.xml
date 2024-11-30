@@ -8,27 +8,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="304dp"
-        android:layout_height="651dp"
+        android:layout_width="287dp"
+        android:layout_height="670dp"
         android:padding="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/actionButtonBlood"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
-            android:alpha="0.9"
-            android:clickable="false"
-            android:contentDescription="@string/Action_CheckBlood"
-            app:backgroundTint="#FF4081"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/closeButton"
-            app:srcCompat="@drawable/baseline_water_drop_24" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/textForHelp7"
@@ -99,14 +87,14 @@
             android:id="@+id/actionButtonCall"
             android:layout_width="97dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="20dp"
             android:alpha="0.9"
             android:clickable="false"
             android:contentDescription="@string/Action_Call999"
             app:backgroundTint="#FF4081"
-            app:layout_constraintEnd_toEndOf="@+id/actionButtonBlood"
-            app:layout_constraintStart_toStartOf="@+id/actionButtonBlood"
-            app:layout_constraintTop_toBottomOf="@+id/actionButtonBlood"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/closeButton"
             app:srcCompat="@android:drawable/stat_sys_phone_call" />
 
         <TextView
@@ -192,19 +180,6 @@
             app:srcCompat="@drawable/alert_square_svgrepo_com" />
 
         <TextView
-            android:id="@+id/textForHelp6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:text="@string/Action_CheckBlood"
-            app:layout_constraintBottom_toBottomOf="@+id/actionButtonBlood"
-            app:layout_constraintEnd_toStartOf="@+id/actionButtonBlood"
-            app:layout_constraintHorizontal_bias="0.864"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/actionButtonBlood"
-            app:layout_constraintVertical_bias="0.54" />
-
-        <TextView
             android:id="@+id/textForHelp2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -238,11 +213,39 @@
             android:layout_height="24dp"
             android:layout_gravity="end"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="20dp"
             android:contentDescription="@string/close_dialog_window"
             android:src="@drawable/baseline_close_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"
+            android:clickable="true"
+            app:backgroundTint="#FF4081"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ActionButtonComfort"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/ActionButtonComfort"
+            app:layout_constraintTop_toBottomOf="@+id/ActionButtonComfort"
+            app:layout_constraintVertical_bias="0.135"
+            app:srcCompat="@drawable/automated_external_defibrillator__symbol_" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Action_AED"
+            app:layout_constraintBottom_toBottomOf="@+id/floatingActionButton"
+            app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
+            app:layout_constraintHorizontal_bias="0.875"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/floatingActionButton"
+            app:layout_constraintVertical_bias="0.432" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -33,6 +33,9 @@
     <string name="Action_CheckAirways">Check the airways</string>
     <string name="back_to_game">PLAY SCENE AGAIN</string>
     <string name="history">HISTORY</string>
-    <string name="end_text">Your scene ended\nYour results:\nScore: 0, Time: 0</string>
+    <string name="end_text">Your scene ended\nYour results:</string>
     <string name="end_text2">Your scored points at: 0\n You lost points at: 0</string>
+    <string name="Action_AED">Using AED</string>
+    <string name="score">your score</string>
+    <string name="time">your time</string>
 </resources>

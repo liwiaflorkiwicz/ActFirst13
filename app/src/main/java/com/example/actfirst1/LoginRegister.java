@@ -14,7 +14,7 @@ public class LoginRegister extends AppCompatActivity {
     private EditText usernameField, passwordField;
     private Button btnLogin, btnRegister;
 
-    private SharedPreferences preferences;
+    public SharedPreferences preferences;
 
     protected void onCreate(Bundle savedInstanceState) {
 

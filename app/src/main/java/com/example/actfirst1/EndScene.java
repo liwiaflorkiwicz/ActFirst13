@@ -9,50 +9,58 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EndScene extends AppCompatActivity {
 
-    public static final int SCENE_1 = 1;
-    public static final int SCENE_2 = 2;
-    public static final int SCENE_3 = 3;
-    public static final int SCENE_4 = 4;
-
     // Pobierz numer poprzedniej sceny z intencji
-
-    int previousScene = getIntent().getIntExtra("previous_scene", SCENE_1);
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scene_end);
 
-        String username = getIntent().getStringExtra("username");
-        TextView textView = findViewById(R.id.textView13);
-        textView.setText(username);
+        // ???
+        int scene = getIntent().getIntExtra("scene", 0);
+        TextView textScene = findViewById(R.id.textView14);
+        textScene.setText(GameSession.getSceneName(this, scene));
 
-        String sceneName = getIntent().getStringExtra("sceneName");
-        TextView textView2 = findViewById(R.id.textView14);
-        textView2.setText(sceneName);
+        String username = getIntent().getStringExtra("username");
+        TextView textUsername = findViewById(R.id.textView13);
+        textUsername.setText(username);
+
+        int scores = getIntent().getIntExtra("score", 0);
+        TextView textScore = findViewById(R.id.textView23);
+        textScore.setText(String.format("Score: %d", scores));
+
+        int time = getIntent().getIntExtra("time", 0);
+        TextView timeScore = findViewById(R.id.textView24);
+        timeScore.setText(String.format("Time: %d s", time));
+
+        SharedPreferencesHelper.saveGameSession(this, username, scene, scores, time);
 
         Button backButtonGame = findViewById(R.id.backButtonGame);
         backButtonGame.setOnClickListener(view -> {
-            Class<?> targetActivity = null;
-            switch (previousScene) {
-                case SCENE_1:
+
+            Class<?> targetActivity;
+            switch (scene) {
+                case 1:
                     targetActivity = Scene1Activity.class;
                     break;
-                case SCENE_2:
+                case 2:
                     targetActivity = Scene2Activity.class;
                     break;
-                case SCENE_3:
+                case 3:
                     targetActivity = Scene3Activity.class;
                     break;
-                case SCENE_4:
+                case 4:
                     targetActivity = Scene4Activity.class;
+                    break;
+                default:
+                    // If no previous scene is specified, return to MainActivity
+                    targetActivity = MainActivity.class;
                     break;
             }
 
-            if (targetActivity != null) {
-                Intent intent = new Intent(EndScene.this, targetActivity);
-                intent.putExtra("username", username);
-                startActivity(intent);
-            }
+            Intent intent = new Intent(EndScene.this, targetActivity);
+            intent.putExtra("username", username);
+            startActivity(intent);
+
         });
 
         Button historyButton = findViewById(R.id.historyButtonEnd);

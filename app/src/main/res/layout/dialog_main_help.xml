@@ -27,7 +27,7 @@
         android:layout_gravity="end"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="4dp"
-        android:contentDescription="Close Dialog"
+        android:contentDescription="@string/close_dialog_window"
         android:src="@drawable/baseline_close_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
