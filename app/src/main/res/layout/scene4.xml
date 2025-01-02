@@ -7,6 +7,32 @@
     android:background="#F7F7F7">
 
 
+    <TextView
+        android:id="@+id/scoreText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="@string/score"
+        app:layout_constraintBottom_toTopOf="@+id/helpButtonScene4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <ProgressBar
+        android:id="@+id/progressBar4"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:indeterminateBehavior="cycle"
+        android:indeterminateDuration="3000"
+        android:progressTint="#2196F3"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/ActionButtonBackBlows"
         android:layout_width="wrap_content"
@@ -63,7 +89,7 @@
         app:srcCompat="@drawable/baseline_skip_previous_24" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textViewName4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
@@ -156,7 +182,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewName4" />
 
     <ImageView
         android:id="@+id/imageView"

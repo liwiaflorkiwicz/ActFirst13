@@ -3,10 +3,10 @@ package com.example.actfirst1;
 import android.content.Context;
 
 public class GameSession {
-    private String username;
-    private int scene;
-    private int score;
-    private int time;
+    public String username;
+    public int scene;
+    public int score;
+    public int time;
 
     public GameSession(String username, int scene, int score, int time) {
         this.username = username;
@@ -17,6 +17,18 @@ public class GameSession {
 
     public String getUsername() {
         return username;
+    }
+
+    public int getScene() {
+        return scene;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public int getTime() {
+        return time;
     }
 
     public static String getSceneName(Context context, int scene) {

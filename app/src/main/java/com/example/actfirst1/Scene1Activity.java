@@ -14,12 +14,85 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class Scene1Activity extends AppCompatActivity {
+public class Scene1Activity extends BaseSceneActivity {
 
-    public Algorithm algorithmScene1;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.scene1);
+
+        algorithm = new Algorithm();
+        correctSequence = new int[]{1, 2, 3, 4, 5, 6, 7};
+
+        setupActionButtons();
+        setupViews(R.id.textViewName1, R.id.scoreText1, R.id.progressBar1, R.id.backButtonScene1, R.id.helpButtonScene1);
+    }
+
+    private void setupActionButtons() {
+        FloatingActionButton ActionButtonSafety = findViewById(R.id.ActionButtonSafety);
+        ActionButtonSafety.setOnClickListener(view -> {
+            Toast.makeText(Scene1Activity.this, "SURROUNDINGS IS SAFE", Toast.LENGTH_SHORT).show();
+            handleAction(1, findViewById(R.id.scoreText1), findViewById(R.id.progressBar1));
+        });
+
+        FloatingActionButton ActionButtonCheckCons = findViewById(R.id.ActionButtonCheckCons);
+        ActionButtonCheckCons.setOnClickListener(view -> {
+            Toast.makeText(Scene1Activity.this, "PERSON IS UNCONSCIOUS", Toast.LENGTH_SHORT).show();
+            handleAction(2, findViewById(R.id.scoreText1), findViewById(R.id.progressBar1));
+        });
+
+        FloatingActionButton ActionButtonPerfBreath = findViewById(R.id.ActionButtonPerfBreath);
+        ActionButtonPerfBreath.setOnClickListener(view -> {
+            Toast.makeText(Scene1Activity.this, "2 BREATHS PERFORMED", Toast.LENGTH_SHORT).show();
+            handleAction(8, findViewById(R.id.scoreText1), findViewById(R.id.progressBar1));
+        });
+
+        FloatingActionButton ActionButtonCall999 = findViewById(R.id.ActionButtonCall999);
+        ActionButtonCall999.setOnClickListener(view -> {
+            Toast.makeText(Scene1Activity.this, "999 CALLED \n AMBULANCE ON THEIR WAY", Toast.LENGTH_SHORT).show();
+            handleAction(6, findViewById(R.id.scoreText1), findViewById(R.id.progressBar1));
+        });
+
+        FloatingActionButton ActionButtonCompression = findViewById(R.id.ActionButtonCompression);
+        ActionButtonCompression.setOnClickListener(view -> {
+            Toast.makeText(Scene1Activity.this, "30 COMPRESSIONS PERFORMED", Toast.LENGTH_SHORT).show();
+            handleAction(7, findViewById(R.id.scoreText1), findViewById(R.id.progressBar1));
+        });
+
+        FloatingActionButton ActionButtonHelp = findViewById(R.id.ActionButtonHelp);
+        ActionButtonHelp.setOnClickListener(view -> {
+            Toast.makeText(Scene1Activity.this, "HELP CALLED, PERSON ON THEIR WAY", Toast.LENGTH_SHORT).show();
+            handleAction(5, findViewById(R.id.scoreText1), findViewById(R.id.progressBar1));
+        });
+
+        FloatingActionButton ActionButtonCheckBreath = findViewById(R.id.ActionButtonCheckBreath);
+        ActionButtonCheckBreath.setOnClickListener(view -> {
+            Toast.makeText(Scene1Activity.this, "PERSON IS NOT BREATHING", Toast.LENGTH_SHORT).show();
+            handleAction(3, findViewById(R.id.scoreText1), findViewById(R.id.progressBar1));
+        });
+
+        FloatingActionButton ActionButtonAED = findViewById(R.id.ActionButtonAED);
+        ActionButtonAED.setOnClickListener(view -> {
+            Toast.makeText(Scene1Activity.this, "AED IN USE, LISTEN TO ITS INSTRUCTIONS", Toast.LENGTH_SHORT).show();
+            handleAction(9, findViewById(R.id.scoreText1), findViewById(R.id.progressBar1));
+        });
+
+        FloatingActionButton ActionButtonBlood = findViewById(R.id.ActionButtonBlood);
+        ActionButtonBlood.setOnClickListener(view -> {
+            Toast.makeText(Scene1Activity.this, "CIRCULATION UNNOTICEABLE", Toast.LENGTH_SHORT).show();
+            handleAction(4, findViewById(R.id.scoreText1), findViewById(R.id.progressBar1));
+        });
+    }
+
+    @Override
+    protected int getSceneNumber() {
+        return 1;
+    }
+
+
+
+    /*public Algorithm algorithmScene1;
     private int currentStep = 0;
-    private final int[] correctSequence1 = {1, 2, 3, 4, 5, 6, 7, 8};
-    public String username;
+    private final int[] correctSequence1 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     private CountDownTimer countDownTimer;
     private boolean timerRunning = false;
     public long maxTime = 60000;
@@ -30,7 +103,7 @@ public class Scene1Activity extends AppCompatActivity {
         setContentView(R.layout.scene1); // load layout scene1.xml
         algorithmScene1 = new Algorithm();
 
-        username = getIntent().getStringExtra("username");
+        String username = getIntent().getStringExtra("username");
         TextView textView = findViewById(R.id.textView8);
         textView.setText(username);
 
@@ -39,53 +112,7 @@ public class Scene1Activity extends AppCompatActivity {
 
         startTimer(timerProgressBar, username, scoreText);
 
-        FloatingActionButton ActionButtonSafety = findViewById(R.id.ActionButtonSafety);
-        ActionButtonSafety.setOnClickListener(view -> {
-            Toast.makeText(Scene1Activity.this, "SURROUNDINGS IS SAFE", Toast.LENGTH_SHORT).show();
-            handleAction1(1, scoreText, timerProgressBar);
-        });
 
-        FloatingActionButton ActionButtonCheckCons = findViewById(R.id.ActionButtonCheckCons);
-        ActionButtonCheckCons.setOnClickListener(view -> {
-            Toast.makeText(Scene1Activity.this, "PERSON IS UNCONSCIOUS", Toast.LENGTH_SHORT).show();
-            handleAction1(2, scoreText, timerProgressBar);
-        });
-
-        FloatingActionButton ActionButtonPerfBreath = findViewById(R.id.ActionButtonPerfBreath);
-        ActionButtonPerfBreath.setOnClickListener(view -> {
-            Toast.makeText(Scene1Activity.this, "2 BREATHS PERFORMED", Toast.LENGTH_SHORT).show();
-            handleAction1(7, scoreText, timerProgressBar);
-        });
-
-        FloatingActionButton ActionButtonCall999 = findViewById(R.id.ActionButtonCall999);
-        ActionButtonCall999.setOnClickListener(view -> {
-            Toast.makeText(Scene1Activity.this, "999 CALLED \n AMBULANCE ON THEIR WAY", Toast.LENGTH_SHORT).show();
-            handleAction1(5, scoreText, timerProgressBar);
-        });
-
-        FloatingActionButton ActionButtonCompression = findViewById(R.id.ActionButtonCompression);
-        ActionButtonCompression.setOnClickListener(view -> {
-            Toast.makeText(Scene1Activity.this, "30 COMPRESSIONS PERFORMED", Toast.LENGTH_SHORT).show();
-            handleAction1(6, scoreText, timerProgressBar);
-        });
-
-        FloatingActionButton ActionButtonHelp = findViewById(R.id.ActionButtonHelp);
-        ActionButtonHelp.setOnClickListener(view -> {
-            Toast.makeText(Scene1Activity.this, "HELP CALLED, PERSON ON THEIR WAY", Toast.LENGTH_SHORT).show();
-            handleAction1(4, scoreText, timerProgressBar);
-        });
-
-        FloatingActionButton ActionButtonCheckBreath = findViewById(R.id.ActionButtonCheckBreath);
-        ActionButtonCheckBreath.setOnClickListener(view -> {
-            Toast.makeText(Scene1Activity.this, "PERSON IS NOT BREATHING", Toast.LENGTH_SHORT).show();
-            handleAction1(3, scoreText, timerProgressBar);
-        });
-
-        FloatingActionButton ActionButtonAED = findViewById(R.id.ActionButtonAED);
-        ActionButtonAED.setOnClickListener(view -> {
-            Toast.makeText(Scene1Activity.this, "AED IN USE, LISTEN TO ITS INSTRUCTIONS", Toast.LENGTH_SHORT).show();
-            handleAction1(8, scoreText, timerProgressBar);
-        });
 
 
         Button backButtonScene1 = findViewById(R.id.backButtonScene1);
@@ -128,7 +155,7 @@ public class Scene1Activity extends AppCompatActivity {
             countDownTimer.cancel();
             timerRunning = false;
             long elapsedTime = maxTime - timerProgressBar.getProgress();
-            endGame(username, scoreText, (int) (elapsedTime / 1000)); // in here time is getting wrongly
+            endGame("username", scoreText, (int) (elapsedTime / 1000)); // in here time is getting wrongly
         }
     }
 
@@ -179,5 +206,5 @@ public class Scene1Activity extends AppCompatActivity {
         if (timerRunning) {
             countDownTimer.cancel();
         }
-    }
+    }*/
 }

@@ -24,6 +24,7 @@
             android:exported="true">
 
         </activity>
+        <activity android:name=".BaseSceneActivity"/>
         <activity android:name=".Scene1Activity" />
         <activity android:name=".Scene2Activity" />
         <activity android:name=".Scene3Activity" />

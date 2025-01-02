@@ -15,7 +15,6 @@ public class EndScene extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scene_end);
 
-        // ???
         int scene = getIntent().getIntExtra("scene", 0);
         TextView textScene = findViewById(R.id.textView14);
         textScene.setText(GameSession.getSceneName(this, scene));
@@ -32,11 +31,10 @@ public class EndScene extends AppCompatActivity {
         TextView timeScore = findViewById(R.id.textView24);
         timeScore.setText(String.format("Time: %d s", time));
 
-        SharedPreferencesHelper.saveGameSession(this, username, scene, scores, time);
+        HistoryActivity.addGameSession(this, username, scene, scores, time);
 
         Button backButtonGame = findViewById(R.id.backButtonGame);
         backButtonGame.setOnClickListener(view -> {
-
             Class<?> targetActivity;
             switch (scene) {
                 case 1:

@@ -51,7 +51,7 @@
         app:srcCompat="@drawable/baseline_water_drop_24" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textViewName1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
@@ -161,7 +161,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewName1" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -189,7 +189,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/progressBar1"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
@@ -216,7 +216,7 @@
         app:srcCompat="@android:drawable/stat_sys_phone_call" />
 
     <TextView
-        android:id="@+id/scoreText"
+        android:id="@+id/scoreText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
