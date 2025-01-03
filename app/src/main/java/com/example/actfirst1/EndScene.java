@@ -7,9 +7,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EndScene extends AppCompatActivity {
+import java.util.Locale;
 
-    // Pobierz numer poprzedniej sceny z intencji
+public class EndScene extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,13 +25,15 @@ public class EndScene extends AppCompatActivity {
 
         int scores = getIntent().getIntExtra("score", 0);
         TextView textScore = findViewById(R.id.textView23);
-        textScore.setText(String.format("Score: %d", scores));
+        textScore.setText(String.format(Locale.getDefault(), "Score: %d", scores));
+
+        int steps = getIntent().getIntExtra("steps", 0);
 
         int time = getIntent().getIntExtra("time", 0);
         TextView timeScore = findViewById(R.id.textView24);
-        timeScore.setText(String.format("Time: %d s", time));
+        timeScore.setText(String.format(Locale.getDefault(), "Time: %d s", time));
 
-        HistoryActivity.addGameSession(this, username, scene, scores, time);
+        HistoryActivity.addGameSession(this, username, scene, scores, time, steps);
 
         Button backButtonGame = findViewById(R.id.backButtonGame);
         backButtonGame.setOnClickListener(view -> {

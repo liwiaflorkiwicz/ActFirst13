@@ -19,16 +19,8 @@ public class GameSession {
         return username;
     }
 
-    public int getScene() {
-        return scene;
-    }
-
     public int getScore() {
         return score;
-    }
-
-    public int getTime() {
-        return time;
     }
 
     public static String getSceneName(Context context, int scene) {

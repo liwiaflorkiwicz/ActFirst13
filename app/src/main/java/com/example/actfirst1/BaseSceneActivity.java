@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -12,6 +11,8 @@ import android.widget.Toast;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Locale;
 
 public abstract class BaseSceneActivity extends AppCompatActivity {
     protected Algorithm algorithm;
@@ -29,12 +30,9 @@ public abstract class BaseSceneActivity extends AppCompatActivity {
         username = getIntent().getStringExtra("username");
     }
 
-    protected void setupViews(int nameTextId, int scoreTextId, int progressBarId, int backButtonId, int helpButtonId) {
+    protected void setupViews(int nameTextId, int backButtonId, int helpButtonId) {
         TextView textView8 = findViewById(nameTextId);
         textView8.setText(username);
-
-        TextView scoreText = findViewById(scoreTextId);
-        ProgressBar timerProgressBar = findViewById(progressBarId);
 
         Button backButton = findViewById(backButtonId);
         backButton.setOnClickListener(view -> {
@@ -46,7 +44,37 @@ public abstract class BaseSceneActivity extends AppCompatActivity {
         Button helpButton = findViewById(helpButtonId);
         helpButton.setOnClickListener(view -> showHelpDialog());
 
-        startTimer(timerProgressBar, username, scoreText);
+    }
+
+    protected void startScene(int progressBarId) {
+
+        Dialog helpDialog = new Dialog(this);
+
+        switch (getSceneNumber()) {
+            case 1:
+                helpDialog.setContentView(R.layout.dialog_scene1_help);
+                break;
+            case 2:
+                helpDialog.setContentView(R.layout.dialog_scene2_help);
+                break;
+            case 3:
+                helpDialog.setContentView(R.layout.dialog_scene3_help);
+                break;
+            case 4:
+                helpDialog.setContentView(R.layout.dialog_scene4_help);
+                break;
+        }
+
+        ImageView closeButton = helpDialog.findViewById(R.id.closeButton);
+        closeButton.setOnClickListener(v -> {
+            helpDialog.dismiss();
+            if (!timerRunning) {
+                startTimer(findViewById(progressBarId), username);
+            }
+        });
+
+        helpDialog.show();
+
     }
 
     protected void showHelpDialog() {
@@ -68,11 +96,7 @@ public abstract class BaseSceneActivity extends AppCompatActivity {
         }
 
         ImageView closeButton = helpDialog.findViewById(R.id.closeButton);
-        if (closeButton != null) {
-            closeButton.setOnClickListener(v -> helpDialog.dismiss());
-        } else {
-            Log.e("BaseSceneActivity", "closeButton is null");
-        }
+        closeButton.setOnClickListener(v -> helpDialog.dismiss());
 
         helpDialog.show();
     }
@@ -81,11 +105,11 @@ public abstract class BaseSceneActivity extends AppCompatActivity {
         if (algorithm.isCorrectSequence(action, correctSequence, currentStep)) {
             algorithm.correctAction();
             currentStep++;
-            scoreText.setText(String.format("Score: %d", algorithm.getScore()));
+            scoreText.setText(String.format(Locale.getDefault(), "Score: %d", algorithm.getScore()));
             Toast.makeText(this, "Correct! Score: " + algorithm.getScore(), Toast.LENGTH_SHORT).show();
         } else {
             algorithm.wrongAction();
-            scoreText.setText(String.format("Score: %d", algorithm.getScore()));
+            scoreText.setText(String.format(Locale.getDefault(), "Score: %d", algorithm.getScore()));
             Toast.makeText(this, "Wrong! Score: " + algorithm.getScore(), Toast.LENGTH_SHORT).show();
         }
 
@@ -93,11 +117,11 @@ public abstract class BaseSceneActivity extends AppCompatActivity {
             countDownTimer.cancel();
             timerRunning = false;
             long elapsedTime = maxTime - timerProgressBar.getProgress();
-            endGame(username, scoreText, (int) (elapsedTime / 1000));
+            endGame(username, (int) (elapsedTime / 1000));
         }
     }
 
-    protected void endGame(String username, TextView scoreText, int time) {
+    protected void endGame(String username, int time) {
         Toast.makeText(this, "Sequence complete! Final Score: " + algorithm.getScore(), Toast.LENGTH_LONG).show();
         currentStep = 0;
 
@@ -108,10 +132,11 @@ public abstract class BaseSceneActivity extends AppCompatActivity {
         intent.putExtra("score", algorithm.getScore());
         intent.putExtra("time", time);
         intent.putExtra("scene", scene);
+        intent.putExtra("steps", correctSequence.length);
         startActivity(intent);
     }
 
-    protected void startTimer(ProgressBar timerProgressBar, String username, TextView scoreText) {
+    protected void startTimer(ProgressBar timerProgressBar, String username) {
         timerProgressBar.setMax((int) maxTime);
         timerProgressBar.setProgress((int) maxTime);
 
@@ -128,7 +153,7 @@ public abstract class BaseSceneActivity extends AppCompatActivity {
             public void onFinish() {
                 timerProgressBar.setProgress(0);
                 if (currentStep < correctSequence.length) {
-                    endGame(username, scoreText, (int) (elapsedTime / 1000));
+                    endGame(username, (int) (elapsedTime / 1000));
                 }
             }
         };

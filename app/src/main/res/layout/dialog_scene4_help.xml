@@ -1,254 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="#FDFDFD"
+    android:backgroundTint="#FDFDFD"
     android:padding="12dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="303dp"
-        android:layout_height="627dp"
+        android:layout_width="290dp"
+        android:layout_height="548dp"
+        android:background="#FDFDFD"
+        android:backgroundTint="#FDFDFD"
         android:padding="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/actionButtonCall"
-            android:layout_width="97dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:alpha="0.9"
-            android:clickable="false"
-            android:contentDescription="@string/Action_Call999"
-            app:backgroundTint="#FF4081"
-            app:layout_constraintEnd_toEndOf="@+id/actionButtonSafety"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/actionButtonSafety"
-            app:layout_constraintTop_toBottomOf="@+id/actionButtonSafety"
-            app:srcCompat="@android:drawable/stat_sys_phone_call" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/actionButtonImmobilize"
-            android:layout_width="97dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:alpha="0.9"
-            android:clickable="false"
-            android:contentDescription="@string/Action_PerformCompressions"
-            app:backgroundTint="#FF4081"
-            app:layout_constraintEnd_toEndOf="@+id/actionButtonHelp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/actionButtonHelp"
-            app:layout_constraintTop_toBottomOf="@+id/actionButtonHelp"
-            app:srcCompat="@drawable/baseline_keyboard_double_arrow_down_24" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/ActionButtonComfort"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
-            android:alpha="0.9"
-            android:clickable="false"
-            android:contentDescription="@string/Action_Cough"
-            app:backgroundTint="#FF4081"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/closeButton"
-            app:srcCompat="@drawable/baseline_textsms_24" />
-
-        <TextView
-            android:id="@+id/textForHelp3"
-            android:layout_width="181dp"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:text="@string/Action_Monitor"
-            app:layout_constraintBottom_toBottomOf="@+id/actionButtonHelp"
-            app:layout_constraintEnd_toStartOf="@+id/actionButtonHelp"
-            app:layout_constraintHorizontal_bias="0.269"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/actionButtonHelp" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/actionButtonBlood"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:alpha="0.9"
-            android:clickable="false"
-            android:contentDescription="@string/Action_BackBlows"
-            app:backgroundTint="#FF4081"
-            app:layout_constraintEnd_toEndOf="@+id/ActionButtonComfort"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/ActionButtonComfort"
-            app:layout_constraintTop_toBottomOf="@+id/ActionButtonComfort"
-            app:srcCompat="@drawable/baseline_waving_hand_24" />
-
-        <TextView
-            android:id="@+id/textForHelp4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Action_CPR"
-            app:layout_constraintBottom_toBottomOf="@+id/actionButtonImmobilize"
-            app:layout_constraintEnd_toStartOf="@+id/actionButtonImmobilize"
-            app:layout_constraintHorizontal_bias="0.876"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/actionButtonImmobilize"
-            app:layout_constraintVertical_bias="0.54" />
-
-        <TextView
-            android:id="@+id/textForHelp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Action_CheckSafety"
-            app:layout_constraintBottom_toBottomOf="@+id/actionButtonSafety"
-            app:layout_constraintEnd_toStartOf="@+id/actionButtonSafety"
-            app:layout_constraintHorizontal_bias="0.657"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/actionButtonSafety"
-            app:layout_constraintVertical_bias="0.486" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/actionButtonCheckBreath"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:alpha="0.9"
-            android:clickable="false"
-            android:contentDescription="@string/Action_Heimlich"
-            app:backgroundTint="#FF4081"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/actionButtonImmobilize"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/actionButtonImmobilize"
-            app:layout_constraintTop_toBottomOf="@+id/actionButtonImmobilize"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/baseline_skip_previous_24" />
-
-        <TextView
-            android:id="@+id/textForHelp6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/Action_BackBlows"
-            app:layout_constraintBottom_toBottomOf="@+id/actionButtonBlood"
-            app:layout_constraintEnd_toStartOf="@+id/actionButtonBlood"
-            app:layout_constraintHorizontal_bias="0.826"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/actionButtonBlood"
-            app:layout_constraintVertical_bias="0.513" />
-
-        <TextView
-            android:id="@+id/textForHelp2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Action_Call999"
-            app:layout_constraintBottom_toBottomOf="@+id/actionButtonCall"
-            app:layout_constraintEnd_toStartOf="@+id/actionButtonCall"
-            app:layout_constraintHorizontal_bias="0.885"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/actionButtonCall"
-            app:layout_constraintVertical_bias="0.567" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/actionButtonHelp"
-            android:layout_width="96dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:alpha="0.9"
-            android:clickable="false"
-            android:contentDescription="@string/Action_CheckAirways"
-            app:backgroundTint="#FF4081"
-            app:layout_constraintEnd_toEndOf="@+id/actionButtonCall"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/actionButtonCall"
-            app:layout_constraintTop_toBottomOf="@+id/actionButtonCall"
-            app:srcCompat="@drawable/baseline_remove_red_eye_24" />
-
-        <TextView
-            android:id="@+id/textForHelp5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:text="@string/Action_Heimlich"
-            app:layout_constraintBottom_toBottomOf="@+id/actionButtonCheckBreath"
-            app:layout_constraintEnd_toStartOf="@+id/actionButtonCheckBreath"
-            app:layout_constraintHorizontal_bias="0.558"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/actionButtonCheckBreath"
-            app:layout_constraintVertical_bias="0.62" />
-
-        <TextView
-            android:id="@+id/textForHel3p3.1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Action_Cough"
-            app:layout_constraintBottom_toBottomOf="@+id/ActionButtonComfort"
-            app:layout_constraintEnd_toStartOf="@+id/ActionButtonComfort"
-            app:layout_constraintHorizontal_bias="0.787"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/ActionButtonComfort"
-            app:layout_constraintVertical_bias="0.567" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/actionButtonSafety"
-            android:layout_width="97dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:alpha="0.9"
-            android:clickable="false"
-            android:contentDescription="@string/Action_CheckSafety"
-            app:backgroundTint="#FF4081"
-            app:layout_constraintEnd_toEndOf="@+id/actionButtonBlood"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/actionButtonBlood"
-            app:layout_constraintTop_toBottomOf="@+id/actionButtonBlood"
-            app:srcCompat="@drawable/baseline_warning_24" />
 
         <ImageView
             android:id="@+id/closeButton"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="end"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="20dp"
             android:contentDescription="@string/close_dialog_window"
             android:src="@drawable/baseline_close_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/actionButtonCheckBreath3"
+        <ImageView
+            android:id="@+id/imageView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:alpha="0.9"
-            android:clickable="false"
-            android:contentDescription="@string/Action_CheckAirways"
-            app:backgroundTint="#FF4081"
+            android:contentDescription="@string/Scene1Name"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/actionButtonCheckBreath"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/actionButtonCheckBreath"
-            app:layout_constraintTop_toBottomOf="@+id/actionButtonCheckBreath"
-            app:layout_constraintVertical_bias="0.2"
-            app:srcCompat="@drawable/baseline_air_24" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Action_CheckAirways"
-            app:layout_constraintBottom_toBottomOf="@+id/actionButtonCheckBreath3"
-            app:layout_constraintEnd_toStartOf="@+id/actionButtonCheckBreath3"
-            app:layout_constraintHorizontal_bias="0.83"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/actionButtonCheckBreath3"
-            app:layout_constraintVertical_bias="0.513" />
-
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/scene4" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

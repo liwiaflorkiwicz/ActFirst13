@@ -8,12 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
-import java.util.Locale;
-
 public class HistoryActivity extends AppCompatActivity {
-
-    //private static ArrayList<GameSession> gameHistory = new ArrayList<>();
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +28,6 @@ public class HistoryActivity extends AppCompatActivity {
         TextView historyTextView3 = findViewById(R.id.historyTextView3);
         TextView historyTextView4 = findViewById(R.id.historyTextView4);
 
-        /*historyTextView1.setText(displayGameHistory(1));
-        historyTextView2.setText(displayGameHistory(2));
-        historyTextView3.setText(displayGameHistory(3));
-        historyTextView4.setText(displayGameHistory(4));*/
-
         historyTextView1.setText(gameHistory1);
         historyTextView2.setText(gameHistory2);
         historyTextView3.setText(gameHistory3);
@@ -52,20 +42,8 @@ public class HistoryActivity extends AppCompatActivity {
 
     }
 
-    public static void addGameSession(Context context, String username, int scene, int score, int time) {
-        //gameHistory.add(new GameSession(username, scene, score, time));
-        SharedPreferencesHelper.saveGameSession(context, username, scene, score, time);
-
+    public static void addGameSession(Context context, String username, int scene, int score, int time, int steps) {
+        SharedPreferencesHelper.saveGameSession(context, username, scene, score, time, steps);
     }
 
-    /*private String displayGameHistory(int scene) {
-        StringBuilder historyText = new StringBuilder();
-        for (GameSession session : gameHistory) {
-            if (session.getScene() == scene) {
-                historyText.append(String.format(Locale.getDefault(), "Score: %d, Time: %d s\n",
-                        session.getScore(), session.getTime()));
-            }
-        }
-        return historyText.toString();
-    }*/
 }
