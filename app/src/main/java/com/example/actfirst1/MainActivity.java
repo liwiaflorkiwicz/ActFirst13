@@ -14,6 +14,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -38,6 +40,13 @@ public class MainActivity extends AppCompatActivity {
         Button historyButton = findViewById(R.id.historyButton);
         historyButton.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+            intent.putExtra("username", username);
+            startActivity(intent);
+        });
+
+        Button gameButton = findViewById(R.id.gameButton);
+        gameButton.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, GameActivity.class);
             intent.putExtra("username", username);
             startActivity(intent);
         });
@@ -69,6 +78,12 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("username", username);
             startActivity(intent);
         });
+
+        FloatingActionButton logoutButton = findViewById(R.id.logoutButton);
+        logoutButton.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, LoginRegister.class);
+            startActivity(intent);
+        });
     }
 
     private void showHelpDialog() {
@@ -85,12 +100,3 @@ public class MainActivity extends AppCompatActivity {
         helpDialog.show();
     }
 }
-
-/*
-
-THINGS TO DO
-
-historia wynikow
-wysuwany pasek z algorytmem z boku ???
-
-*/

@@ -31,6 +31,7 @@
         <activity android:name=".Scene4Activity" />
         <activity android:name=".EndScene" />
         <activity android:name=".HistoryActivity" />
+        <activity android:name=".GameActivity" />
     </application>
 
 </manifest>

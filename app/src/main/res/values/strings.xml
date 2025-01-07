@@ -2,8 +2,11 @@
     <string name="app_name">ActFirst</string>
     <string name="helpText1main">HELP text for main window add explanation for all game</string>
     <string name="helpText2main">Choose scene 1 to 4 to start game\n
-        When you start the scene the 4 minute timer will start\n
-        Each scene will present an accident where YOU are the person that can help</string>
+        When you start the scene you will see correct algorithm\n
+        After closing dialog window the 60s timer will start\n
+        Each scene will present an accident where YOU are the person that can help\n
+        You will have to choose the right action to help the person\n
+    </string>
     <string name="Scene1Name">RESUSCITATION</string>
     <string name="UserName">User name</string>
     <string name="Scene2Name">BROKEN BONE</string>
@@ -33,9 +36,18 @@
     <string name="Action_CheckAirways">Check the airways</string>
     <string name="back_to_game">PLAY SCENE AGAIN</string>
     <string name="history">HISTORY</string>
-    <string name="end_text">Your scene ended\nYour results:</string>
+    <string name="end_text">Your scene ended\n\nYour results:</string>
     <string name="end_text2">Your scored points at: 0\n You lost points at: 0</string>
     <string name="Action_AED">Using AED</string>
     <string name="score">your score</string>
     <string name="time">your time</string>
+    <string name="game">GAME</string>
+    <string name="pushbutton_game">pushButton</string>
+    <string name="timeButton">timeButton\n</string>
+    <string name="game_description">press START button to begin the game\n
+        after 3-second countdown, the game will start\n
+        press the button when the color changes\n
+        to GREEN to perform a chest compression\n
+        the game ends after 30 correctly timed compressions</string>
+    <string name="start_button">start button</string>
 </resources>
